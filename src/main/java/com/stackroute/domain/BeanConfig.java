@@ -1,5 +1,6 @@
 package com.stackroute.domain;
 
+import com.stackroute.BeanLifecycleDemoBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -44,5 +45,11 @@ public class BeanConfig {
         actor2.setGender("Male");
         actor2.setAge(68);
         return actor2;
+    }
+
+    @Bean
+    public  BeanLifecycleDemoBean beanLifecycleDemoBean(){
+        BeanLifecycleDemoBean beanLifecycleDemoBean=new BeanLifecycleDemoBean();
+        return  beanLifecycleDemoBean;
     }
 }

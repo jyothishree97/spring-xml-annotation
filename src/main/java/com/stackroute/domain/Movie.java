@@ -11,10 +11,13 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
-public class Movie implements  ApplicationContextAware, BeanNameAware,BeanFactoryAware {
+public class Movie implements ApplicationContextAware, BeanNameAware, BeanFactoryAware {
 
-//   when Spring finds n @Autowired annotation used with property , it tries to perform byName autowiring
+    //   when Spring finds n @Autowired annotation used with property , it tries to perform byName autowiring
     Actor actor;
+    private ApplicationContextAware applicationContext;
+    private BeanFactoryAware beanFactory;
+    private BeanNameAware beanName;
 
 
     @Required
@@ -33,17 +36,19 @@ public class Movie implements  ApplicationContextAware, BeanNameAware,BeanFactor
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+
         System.out.println(applicationContext);
     }
 
     @Override
     public void setBeanName(String s) {
-        System.out.println("The bean name is:"+s);
+        System.out.println("The bean name is:" + s);
 
     }
 
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+
         System.out.println(beanFactory);
     }
 }
