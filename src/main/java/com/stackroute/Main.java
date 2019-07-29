@@ -25,10 +25,18 @@ public class Main {
 
         ApplicationContext applicationcontext = new AnnotationConfigApplicationContext(BeanConfig.class);
         Movie movie = (Movie) applicationcontext.getBean("movie");
+        Movie movie1=(Movie) applicationcontext.getBean("movie");
+        System.out.println(movie+"mobviedwd");
+        Actor actor=(Actor) applicationcontext.getBean("actor");
+        System.out.println(actor);
+        Actor actor1=(Actor) applicationcontext.getBean("actor1");
+        System.out.println(actor1);
+        Actor actor2=(Actor) applicationcontext.getBean("actor2");
+        System.out.println(actor2);
 
 
-        ((AbstractApplicationContext)applicationcontext).registerShutdownHook();
-        System.out.println(movie.getActor());
+        System.out.println(actor==actor1);
+        System.out.println(movie==movie1);
 
     }
 }

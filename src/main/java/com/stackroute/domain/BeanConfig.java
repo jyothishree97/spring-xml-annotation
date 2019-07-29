@@ -1,8 +1,6 @@
 package com.stackroute.domain;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.*;
 import org.springframework.stereotype.Component;
 
 @Configuration
@@ -10,6 +8,7 @@ import org.springframework.stereotype.Component;
 public class BeanConfig {
 
     @Bean
+    @Scope(value="prototype")
     public Movie movie(){
         Movie movie=new Movie();
         movie.setActor(actor());
@@ -18,11 +17,18 @@ public class BeanConfig {
 
     @Bean
     public Actor actor(){
-        Actor actor=new Actor();
-//        actor.setName("Raj");
-//        actor.setGender("Male");
-//        actor.setAge(68);
+        Actor actor=new Actor("Raj","Male",68);
           return actor;
     }
+    @Bean
+    public Actor actor1(){
+        Actor actor=new Actor("kumar","Male",68);
+        return actor;
+    }
 
+    @Bean
+    public Actor actor2(){
+        Actor actor=new Actor("Vishnu","Male",68);
+        return actor;
+    }
 }

@@ -6,6 +6,6 @@
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!-- bean definitions here -->
     <context:annotation-config/>
-    <context:component-scan base-package="com.stackroute.domain.Movie"></context:component-scan>
+
 
 </beans>
