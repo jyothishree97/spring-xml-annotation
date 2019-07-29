@@ -26,7 +26,7 @@ public class Main {
         ApplicationContext applicationcontext = new AnnotationConfigApplicationContext(BeanConfig.class);
         Movie movie = (Movie) applicationcontext.getBean("movie");
         Movie movie1=(Movie) applicationcontext.getBean("movie");
-        System.out.println(movie+"mobviedwd");
+        System.out.println(movie);
         Actor actor=(Actor) applicationcontext.getBean("actor");
         System.out.println(actor);
         Actor actor1=(Actor) applicationcontext.getBean("actor1");

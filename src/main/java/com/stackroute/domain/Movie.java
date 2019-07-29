@@ -11,14 +11,14 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 public class Movie {
-    @Autowired
+
+//   when Spring finds n @Autowired annotation used with property , it tries to perform byName autowiring
     Actor actor;
 
-    public Actor getActor() {
-        return actor;
-    }
 
     @Required
+    @Autowired
+    //When Spring finds an @Autowired annotation used with setter methods, it tries to perform byType autowiring on the method.
     public void setActor(Actor actor) {
         this.actor = actor;
     }
