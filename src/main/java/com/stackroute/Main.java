@@ -5,6 +5,7 @@ import com.stackroute.domain.BeanConfig;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -41,6 +42,10 @@ public class Main {
 
         System.out.println(actor==actor1);
         System.out.println(movie==movie1);
+
+//        ConfigurableApplicationContext contex=new AnnotationConfigApplicationContext(BeanConfig.class);
+//         BeanPostProcessorDemoBean demoBean=(BeanPostProcessorDemoBean)contex.getBean("beanPostProcessorDemoBean");
+//         contex.close();
 
     }
 }
